@@ -49,7 +49,7 @@ Total number of steps taken each day is now found with the imputed values
   hist(dayStepsMerge,breaks=25,xlim=c(0,25000),main="Total Steps Taken in a Day (Some Values Imputed)",ylab="Days",xlab ="Steps")
 ```
 
-The median number of steps taken per day is `r median(dayStepsMerge)` steps.  The mean number of steps taken per day is `r round(mean(dayStepsMerge),1)` steps.  When compared to the original data, imputating missing values by the median of the time interval causes a decrease of `r round(100 - median(dayStepsMerge)/median(daySteps)*100) `% in the median and `r round(100-mean(dayStepsMerge)/mean(daySteps)*100) `% in the mean.
+The median number of steps taken per day is `r median(dayStepsMerge)` steps.  The mean number of steps taken per day is `r round(mean(dayStepsMerge),1)` steps.  When compared to the original data, imputating missing values by the median of the time interval causes a decrease of `r round(100 - median(dayStepsMerge)/median(daySteps)*100) `% in the median and `r round(100-mean(dayStepsMerge)/mean(daySteps)*100) `% in the mean. 
 
 ```{r}
   activityMerge$WeekendOrWeekday[weekdays(as.Date(activityMerge$date,format="%Y-%m-%d")) == "Saturday" | weekdays(as.Date(activityMerge$date,format="%Y-%m-%d")) == "Sunday"] <- "Weekend"
